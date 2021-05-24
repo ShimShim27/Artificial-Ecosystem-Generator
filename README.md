@@ -10,9 +10,9 @@ This is my 3rd year project in Software Engineering.
 
 
 ## Usage
--Import the project
--Install all the needed libraries especially JSwing.
--Rebuild and Clean the project
--Run the project
+Import the project in your chosen IDE.
+Install all the needed libraries especially JSwing.
+Rebuild and Clean the project.
+Run the project.
   
  
