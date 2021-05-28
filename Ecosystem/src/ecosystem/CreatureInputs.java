@@ -160,19 +160,11 @@ public class CreatureInputs {
              Creature nearestC = (Creature)nearest;
              
             
-             //the nearet phermone
+           
              nearestPhermone = D.oneToNegaOne(nearestC.MAX_PHERMONE, nearestC.MIN_PHERMONE, nearestC.getPhermone());
-          
-             
-             //nearest mass
              nearestMass = D.oneToNegaOne(nearestC.MAX_MASS, nearestMass, nearestC.getMass());
-
-          
-             //nearest feeding scale
              nearestFeedScale = D.oneToNegaOne(nearestC.MAX_FEED_SCALE, nearestFeedScale, nearestC.getFeedingScale());
              
-
-             //get skin color
              Color skinColor = nearestC.getSkinColor();
              nearestSkinColor = D.oneToNegaOne(Color.WHITE.getRGB(), Color.BLACK.getRGB() - 1,  skinColor.getRGB());
             
@@ -180,11 +172,8 @@ public class CreatureInputs {
       
       
         nearestOBj.add(nearestMass);
-        
         nearestOBj.add(nearestSkinColor);
-        
         nearestOBj.add(nearestPhermone);
-        
         nearestOBj.add(nearestFeedScale);
         
     }
@@ -195,13 +184,13 @@ public class CreatureInputs {
     
     
     
-    // input for nearest food
+  
     private void nearestFoodInput(List<Double> nearestOBj , Component nearest){
         double nearestInp = -1;
         if(nearest!= null && nearest instanceof Food){
             int kind_of_food=0;
 
-            //check what type of food it is
+            
             Food food = (Food)nearest;
             if(food instanceof Pellet){
                 kind_of_food = food.PELLET;
@@ -301,7 +290,7 @@ public class CreatureInputs {
     
    
     
-    //component type checkerrs
+  
     private  boolean isTargetComponent(Component component,int type){
          boolean confirmed = false;
         if(type==type_creature && component instanceof Creature){

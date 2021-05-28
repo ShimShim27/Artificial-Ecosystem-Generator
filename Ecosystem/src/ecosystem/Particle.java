@@ -39,11 +39,15 @@ public class Particle extends JPanel {
         this.setBounds(bounds);
     }
     
-    //remove the particles if duration is finish
+    
+    
     public void dissipateParticles(){
         duration--;
         Particle p = this;
         
+        
+        
+        //remove the particles if duration is finish
         if(duration<=0){
             D.invokeLater(()->{
                 p.getParent().remove(p);

@@ -138,11 +138,12 @@ public class MainGUI extends javax.swing.JFrame {
                    
                     creature.decide();
                     
-                    //display creature image if it doesn't yet
+                    
 
 
                     alive++;
 
+                    //display creature image if it doesn't yet
                     executorService.execute(new Runnable() {
                         @Override
                         public void run() {
@@ -242,14 +243,10 @@ public class MainGUI extends javax.swing.JFrame {
 
            populationView.setText(String.valueOf(alive));
 
-
-           //replenishing pellet base on a condition
            pelletSpawnTimer = replenishPellet(pelletCount,pelletSpawnTimer);
 
 
 
-
-            //sleep delay
             pauseFrame();   
 
 
@@ -315,7 +312,7 @@ public class MainGUI extends javax.swing.JFrame {
  
     private long replenishPellet(final long pelletCount , long timer){
         
-        //replenishing pellet base on a certain condition
+        
         if(pelletCount<=globalVariables.getPelletCount() && timer >= globalVariables.getPelletReplenishTimer()){
            D.invokeLater(()->{
                for(int i=0;i<globalVariables.getPelletCount()-pelletCount;i++){
@@ -339,7 +336,7 @@ public class MainGUI extends javax.swing.JFrame {
     
     
     
-    //check if creatures are already extinct
+   
     private boolean isExtinct(Creature lastCreature, Egg lastEgg , long alive){
         boolean extinct = false;
         
@@ -353,7 +350,8 @@ public class MainGUI extends javax.swing.JFrame {
                    return null;
             });
                 
-             //refresh the executor. This prevents the previous jobs to be still loading even the generation is already extinct
+             
+            //refresh the executor. This prevents the previous jobs to be still loading even the generation is already extinct
             executorService.shutdownNow();
             executorService = Executors.newFixedThreadPool(globalVariables.getMaxThread());
             
@@ -394,7 +392,9 @@ public class MainGUI extends javax.swing.JFrame {
     
     
     
-    //removing all
+    
+    
+    
     private void clearAllComponents(){
         mainPlatform.removeAll();
         nnDisplayView.removeAll();
@@ -425,7 +425,7 @@ public class MainGUI extends javax.swing.JFrame {
     
     
     
-    //this will initialize the global variables. If there is a saved file , then it will be the one to be used
+    
     private void initializeGlobalVariables(){
         globalVariables = new GlobalVariables();
         
@@ -502,7 +502,7 @@ public class MainGUI extends javax.swing.JFrame {
         
         /*
            mainPlatform uses grouplayout which is not serializable.
-           To combat this , I first set the layout to null and then serialize the component inside.
+           To combat this , I first set mainPlatform's layout to null and then serialize the component inside.
            After that , I put the original layout back again.
         */
 
@@ -520,14 +520,13 @@ public class MainGUI extends javax.swing.JFrame {
             List<Component> components = new ArrayList<>();
 
 
-            //put all the components inside a list
+           
             for(Component c:mainPlatform.getComponents()){
                components.add(c);
             }
 
 
             try{
-              //save the deep copied object
                Cloner.saveObject(filename,components);
                mainPlatform.setLayout(gl);
             }catch (Exception e){
@@ -543,7 +542,7 @@ public class MainGUI extends javax.swing.JFrame {
     
     
     
-    //this will intiialize gui designs such as background color , label text color and etc.
+    
     private void initializeGUIDesigns(){
         Color mainBgColor = D.hexToColor("#464357");
         getContentPane().setBackground(mainBgColor);

@@ -20,13 +20,13 @@ public class CreatureOutputs {
         double rawOutputs[] = brain.runBrain(inputs);
         
         
-        //split the outputs
+        //split the raw outputs
         double rawMovements[] = getValuesFromRaw(rawOutputs,0,moveCounts-1);
         double rawWants[] = getValuesFromRaw(rawOutputs,moveCounts ,(moveCounts+wantsCount) -1);
         double rawPhermone[] = getValuesFromRaw(rawOutputs , (moveCounts+wantsCount) , (moveCounts+wantsCount+phermoneCount)-1);
      
        
-        //non primitive arrays conversion
+        
         Double finalMove[] = converToNonPrimi(rawMovements);
         Double finalWants[] = converToNonPrimi(rawWants);
         Double finalPhermone[] = converToNonPrimi(rawPhermone);

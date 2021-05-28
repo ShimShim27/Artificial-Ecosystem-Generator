@@ -159,10 +159,8 @@ public class D {
         }
         
        
-        //(int)ensures that 100 is the highest percent
+   
         int happening = (int)D.random(0, 101);
-        
-        
         if(happening<Math.abs(probability)){
             happened = true;
             

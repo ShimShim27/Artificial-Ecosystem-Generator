@@ -48,19 +48,13 @@ public class Mutator {
         
         Brain newCBrain = newC.getBrain();
         
-        //there is a chance that brain is brand new
+        //do a brain crossover by chance else brain is brand new
         if(!D.chanceHappened(not_inherited_prob)){
-            //do a brain crossover by chance
             newCBrain.crossoverBrain(firstParent.getBrain(), secondParent.getBrain() , crossover_prob);
         }
       
         
-        
-        //do a brain mutation by chance
         newCBrain.brainMutate(mutation_rate, mutation_prob, brain_mutation_frequency);
-
-        
-        //crossovered physical traits
         crossOverPhysicalTraits(newC, firstParent, secondParent);
         
         
@@ -72,7 +66,7 @@ public class Mutator {
     
     
     
-    //responsible for crossovered physical traits
+   
     private static void crossOverPhysicalTraits(Creature newC , Creature firstParent , Creature secondParent){
         
          
@@ -131,7 +125,7 @@ public class Mutator {
     
     
     
-    //get the related values from globla variables
+    //get the related values from global variables
     private static void getValuesFromGlobal(Creature parent){
         GlobalVariables globalVariables = parent.getGlobalVariables();
         brain_mutation_frequency = globalVariables.getMutationFrequency();
@@ -149,7 +143,6 @@ public class Mutator {
     
     
     //handles getting the parents
-    
     static private class Parents {
         Creature parent1;
         Creature parent2;

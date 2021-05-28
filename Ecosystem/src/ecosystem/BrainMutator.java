@@ -29,7 +29,7 @@ public class BrainMutator {
     
     
     
-    //do the mutation
+    
     public void mutate(){
         int mutations[] = {1,2,3,4,5,6,7,8,9};
         
@@ -43,7 +43,9 @@ public class BrainMutator {
     }
     
     
-    //choose mutation
+
+    
+    
     private void chooseMutation(int which_mutation){
          switch(which_mutation){
             case 1:
@@ -92,7 +94,7 @@ public class BrainMutator {
     
     
     
-    //add oldNode between synapse mutation
+    
      private void addNodeInBetween(){
 
         //get a random synapse list first

@@ -34,7 +34,7 @@ public class InputFilter extends KeyAdapter {
             
             
             
-            //checking if it matches the regex. Backspace are ignored
+            //checking if it matches the regex. Backspaces are ignored
             if(sb.toString().matches(regex)){
                 tField.setEditable(true);
             }
