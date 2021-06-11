@@ -1,5 +1,5 @@
 # Artificial-Ecosystem-Generator
-A program to simulate artificial ecosystem using machine learning.
+A program to simulate artificial ecosystem using machine learning. (The code maybe messy because it is my school project.)
 
 ## Description
 * This system was built in Netbeans and is using JavaSwing for GUI.
