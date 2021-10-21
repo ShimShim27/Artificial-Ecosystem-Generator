@@ -1,5 +1,7 @@
 # Artificial-Ecosystem-Generator
-A program to simulate artificial ecosystem using machine learning. (The code contains a lot of comments and maybe messy because it is my previous school project)
+A program to simulate artificial ecosystem using machine learning. (The code contains a lot of comments and maybe messy because it is my previous school project)<br/><br/>
+
+Download the direct jar file [here](https://github.com/ShimShim27/Artificial-Ecosystem-Generator-Using-RT-NEAT/blob/main/Ecosystem/Ecosystem.jar).
 
 ## Description
 * This system was built in Netbeans and is using JavaSwing for GUI.
